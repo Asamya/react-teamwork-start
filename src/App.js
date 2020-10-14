@@ -23,7 +23,8 @@ function App() {
     const [blogList, setBlogList] = useState([]);
 
     function onAddBlogEntry (blogData) {
-        setBlogList([...blogList, blogData]);
+        const newBlogList = [...blogList, blogData];
+        setBlogList(newBlogList);
     }
 
   return (
