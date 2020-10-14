@@ -3,13 +3,13 @@ import BlogHeader from "./BlogHeader";
 import BlogBody from "./BlogBody";
 import BlogImage from "./BlogImage";
 
-function BlogEntry({header, text, image}) {
+function BlogEntry({header, text}) {
 
     return (
         <article className="BlogText">
             <BlogHeader header={header}/>
             <BlogBody text={text}/>
-            {/*<BlogImage image={image}/>*/}
+            <BlogImage/>
         </article>
     );
 }

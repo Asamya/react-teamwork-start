@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import BlogEntry from "./components/BlogEntry";
-import ButtonCount from "./components/ButtonCount";
-import AddBlogEntryForm from "./components/AddBlogEntryForm";
+import BlogEntry from "./components/blog/BlogEntry";
+import ButtonCount from "./components/blog/ButtonCount";
+import AddBlogEntryForm from "./components/blog/AddBlogEntryForm";
+import BlogArray from "./components/blog/BlogArray";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 function App() {
     const blogEntry = {
@@ -18,21 +21,12 @@ function App() {
         text: "JUHUUUUU",
         image: "http://placegoat.com/200/200"
     }
-    const entrys = [blogEntry, blogEntry2];
-
-    const [blogList, setBlogList] = useState([]);
-
-    function onAddBlogEntry (blogData) {
-        const newBlogList = [...blogList, blogData];
-        setBlogList(newBlogList);
-    }
 
   return (
     <div className="App">
-        {blogList.map(entry =>
-            <BlogEntry key={entry.id} header={entry.header} text={entry.text} image={entry.image}/>)}
-        <ButtonCount />
-        <AddBlogEntryForm irgendwas={onAddBlogEntry}/>
+        <Header />
+        <BlogArray />
+        <Footer />
     </div>
   );
 }

@@ -5,12 +5,16 @@ function AddBlogEntryForm({irgendwas}) {
 
     const [blogHeader, setBlogHeader] = useState('');
     const [blogBody, setBlogBody] = useState('');
+    const blogImage = "http://placegoat.com/200/200"
 
     function addBlogEntry() {
         irgendwas({
             header:blogHeader,
-            text:blogBody
+            text:blogBody,
+            image:blogImage
         })
+        setBlogHeader('');
+        setBlogBody('')
     }
 
     return <form>
@@ -22,10 +26,12 @@ function AddBlogEntryForm({irgendwas}) {
             Blog Body
         </label>
         <input value={blogBody} onChange={event => setBlogBody(event.target.value)}/>
-        <button type="button" onClick={addBlogEntry}>
+        <button disabled={blogHeader.length === 0 || blogBody.length === 0}
+                type="button"
+                onClick={addBlogEntry}>
             Add Blog Entry
         </button>
-    </form>
+    </form >
 }
 
 export default AddBlogEntryForm;
