@@ -9,7 +9,7 @@ function BlogEntry({header, text, image}) {
         <article className="BlogText">
             <BlogHeader header={header}/>
             <BlogBody text={text}/>
-            <BlogImage image={image}/>
+            {/*<BlogImage image={image}/>*/}
         </article>
     );
 }
